@@ -9,5 +9,5 @@ int odd_ones(unsigned x)
         ++ans;
         x &= x - 1;
     }
-    return ans;
+    return ans&1;
 }
