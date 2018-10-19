@@ -1,4 +1,3 @@
-//google popcount
 int odd_ones(unsigned x) //using while
 {
     int ans = 0;
@@ -10,8 +9,12 @@ int odd_ones(unsigned x) //using while
     return ans & 1;
 }
 
-int hakmem_popcount(unsigned int n)
+int odd_ones(unsigned x)
 {
-    unsigned tmp = n - ((n >> 1) & 033333333333) - ((n >> 2) & 011111111111);
-    return ((tmp + (tmp >> 3)) & 030707070707) & 1;
+    x ^= x >> 16; //x右移16位，然后将x的高16位和低16位异或，忽略32位数结果里面不相干的高16位。
+    x ^= x >> 8;
+    x ^= x >> 4;
+    x ^= x >> 2;
+    x ^= x >> 1;
+    return x&1;
 }
