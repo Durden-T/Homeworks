@@ -16,11 +16,11 @@ listNode *createList(elemType A[], int size)
 {
     if (size <= 0)
         return nullptr;
-    listNode *head = new listNode, *cur = head;
+    listNode *head = malloc(sizeof(listNode)), *cur = head;
     head->next = nullptr;
     for (int i = 0; i < size; ++i)
     {
-        listNode *t = new listNode;
+        listNode *t = malloc(sizeof(listNode));
         t->data = A[i];
         cur->next = t;
         cur = cur->next;
