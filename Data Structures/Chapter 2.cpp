@@ -1,4 +1,5 @@
-void deleteRange(sqList L, elemType k1, elemType k2)
+//1
+void deleteRange(SqList L, ElemType k1, ElemType k2)
 {
     int start = 0, end = 0;
     for (int i = 0; i < L.length && !end; ++i)
@@ -12,15 +13,14 @@ void deleteRange(sqList L, elemType k1, elemType k2)
     L.length = size;
 }
 //2
-listNode *createList(elemType A[], int size)
+ListNode *createList(ElemType A[], int size)
 {
     if (size <= 0)
         return nullptr;
-    listNode *head = malloc(sizeof(listNode)), *cur = head;
-    head->next = nullptr;
+    ListNode *head = malloc(sizeof(ListNode)), *cur = head;
     for (int i = 0; i < size; ++i)
     {
-        listNode *t = malloc(sizeof(listNode));
+        ListNode *t = malloc(sizeof(ListNode));
         t->data = A[i];
         cur->next = t;
         cur = cur->next;
@@ -29,7 +29,7 @@ listNode *createList(elemType A[], int size)
     return head;
 }
 //3
-void reverseInPlace(elemType A[], int arraySize, int n)
+void reverseInPlace(ElemType A[], int arraySize, int n)
 {
     if (n > arraySize)
         n = arraySize;
