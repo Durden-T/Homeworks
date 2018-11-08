@@ -52,10 +52,7 @@ int deQueue(Queue &q)
     if (q.length == EMPTY)
         return failed;
     ElemType ans;
-    if (q.rear - q.base < q.length)
-        ans = *(q.base + MAXQSIZE - Q.length + 1);
-    else
-        ans = *(q.rear - q.length);
     --q.length;
+    return q.rear - q.base < q.length ? *(q.base + MAXQSIZE - Q.length + 1) : *(q.rear - q.length);
     return ans;
 }
